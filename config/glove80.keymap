@@ -53,8 +53,6 @@ endif {
     };
 };
 
-&sk { release-after-ms = <300>; };
-
 / {
     macros {
         rgb_ug_status_macro: rgb_ug_status_macro {
@@ -177,6 +175,14 @@ endif {
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             bindings = <&mo>, <&rgb_ug_status_macro>;
+        };
+
+        shortstickykey_behavior: shortstickykey_behavior {
+            compatible = "zmk,behavior-sticky-key";
+            label = "SHORTSTICKYKEY_BEHAVIOR";
+            bindings = <&sk>;
+            #binding-cells = <1>;
+            release-after-ms = <300>;
         };
     };
 };
