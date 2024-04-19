@@ -176,6 +176,14 @@ endif {
             tapping-term-ms = <200>;
             bindings = <&mo>, <&rgb_ug_status_macro>;
         };
+
+        shorter_sticky_key_behavior: shorter_sticky_key_behavior {
+            compatible = "zmk,behavior-sticky-key";
+            label = "SHORTER_STICKY_KEY_BEHAVIOR";
+            bindings = <&sk>;
+            #binding-cells = <1>;
+            release-after-ms = <300>;
+        };
     };
 };
 
