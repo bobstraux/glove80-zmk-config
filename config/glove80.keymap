@@ -21,10 +21,35 @@
 
 &sk { release-after-ms = <300>; };
 
+&msc {
+    acceleration-exponent = <1>;      /* Smooth acceleration */
+    time-to-max-speed-ms = <300>;     /* Reaches full speed in 300ms */
+    delay-ms = <0>;                   /* Starts scrolling immediately */
+};
+
 / {
     behaviors {
         // For the "layer" key, it'd nice to be able to use it as either a shift or a toggle.
         // Configure it as a tap dance, so the first tap (or hold) is a &mo and the second tap is a &to
+
+fast_scroll_up: fast_scroll_up {
+            compatible = "zmk,behavior-input-two-axis";
+            #binding-cells = <0>;
+            x-input-code = <0>;
+            y-input-code = <INPUT_REL_WHEEL>;
+            time-to-max-speed-ms = <150>;
+            acceleration-exponent = <1>;
+        };
+
+        fast_scroll_down: fast_scroll_down {
+            compatible = "zmk,behavior-input-two-axis";
+            #binding-cells = <0>;
+            x-input-code = <0>;
+            y-input-code = <(-INPUT_REL_WHEEL)>;
+            time-to-max-speed-ms = <150>;
+            acceleration-exponent = <1>;
+        };
+
 
         layer_td: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
