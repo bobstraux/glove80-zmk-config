@@ -23,8 +23,8 @@
 &sk { release-after-ms = <300>; };
 
 &msc {
-    acceleration-exponent = <2>;      /* Enables progressive acceleration (0 = constant speed, 1 = linear curve, 2 = aggressive) */
-    time-to-max-speed-ms = <100>;     /* Milliseconds of holding the key before reaching peak speed */
+    acceleration-exponent = <0>;      /* Enables progressive acceleration (0 = constant speed, 1 = linear curve, 2 = aggressive) */
+    time-to-max-speed-ms = <1>;     /* Milliseconds of holding the key before reaching peak speed */
     delay-ms = <0>;                   /* Milliseconds before scrolling begins */
 };
 
